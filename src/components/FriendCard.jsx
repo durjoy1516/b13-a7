@@ -7,7 +7,7 @@ export default function FriendCard({ friend }) {
       <div className="p-4 bg-white shadow rounded-xl text-center">
 
         {/* Image */}
-        <div className="w-20 h-20 mx-auto rounded-full bg-gray-300 mb-3"></div>
+        <img src={friend.picture} alt={friend.name}className="w-20 h-20 mx-auto rounded-full object-cover mb-3"/>
 
         {/* Name */}
         <h2 className="font-semibold text-lg">{friend.name}</h2>

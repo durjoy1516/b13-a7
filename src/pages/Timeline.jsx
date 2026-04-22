@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 export default function Timeline() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState("All");
+  const [dropdown, setDropdown] = useState(false);
 
   // 🔥 Load from localStorage
   useEffect(() => {
@@ -29,19 +30,41 @@ export default function Timeline() {
           Timeline
         </h1>
 
-        {/* 🔹 Filter Bar */}
-        <div className="flex gap-3 mb-6">
-          {["All", "Call", "Text", "Video"].map((type) => (
-            <button
-              key={type}
-              onClick={() => setFilter(type)}
-              className={`px-4 py-2 rounded border 
-                ${filter === type ? "bg-green-600 text-white" : "bg-white"}
-              `}
-            >
-              {type}
-            </button>
-          ))}
+       {/* 🔹 Classic Dropdown Filter */}
+        <div className="relative mb-6 w-40">
+          
+          {/* Button */}
+          <button
+            onClick={() => setDropdown(!dropdown)}
+            className="w-full px-4 py-2 border rounded bg-white shadow-sm flex justify-between items-center"
+          >
+            <span>{filter}</span>
+            <span className={`text-xs transition ${dropdown ? "rotate-180" : ""}`}>
+              ▼
+            </span>
+          </button>
+          
+          {/* Dropdown Menu */}
+          {dropdown && (
+            <div className="absolute left-0 mt-1 w-full bg-white border rounded shadow-md z-10">
+            
+              {["All", "Call", "Text", "Video"].map((type) => (
+                <div
+                  key={type}
+                  onClick={() => {
+                    setFilter(type);
+                    setDropdown(false);
+                  }}
+                  className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100
+                    ${filter === type ? "bg-gray-100 font-semibold" : ""}
+                  `}
+                >
+                  {type}
+                </div>
+              ))}
+        
+            </div>
+          )}
         </div>
 
         {/* 🔹 Timeline List */}
@@ -77,9 +100,9 @@ export default function Timeline() {
                 </div>
 
                 {/* RIGHT DATE */}
-                <p className="text-sm text-gray-400">
+                {/* <p className="text-sm text-gray-400">
                   {item.date}
-                </p>
+                </p> */}
 
               </div>
             ))

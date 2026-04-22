@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
 
 export default function FriendDetails() {
   const { id } = useParams();
@@ -52,7 +52,11 @@ export default function FriendDetails() {
         {/* 🔹 LEFT SIDE */}
         <div className="bg-white p-6 rounded-xl shadow text-center">
 
-          <div className="w-24 h-24 mx-auto bg-gray-300 rounded-full mb-3"></div>
+          <img
+  src={friend.picture}
+  alt={friend.name}
+  className="w-24 h-24 mx-auto rounded-full object-cover mb-3"
+/>
 
           <h2 className="text-xl font-bold">{friend.name}</h2>
 

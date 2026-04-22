@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "David Kim",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=11",
     "email": "david.kim@example.com",
     "days_since_contact": 10,
     "status": "almost due",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Emma Wilson",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=5",
     "email": "emma.wilson@example.com",
     "days_since_contact": 22,
     "status": "overdue",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Liam Nakamura",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=12",
     "email": "liam.n@example.com",
     "days_since_contact": 5,
     "status": "on-track",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "James Wright",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=15",
     "email": "james.w@example.com",
     "days_since_contact": 30,
     "status": "overdue",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Sophia Martinez",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=9",
     "email": "sophia.m@example.com",
     "days_since_contact": 8,
     "status": "on-track",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Noah Rahman",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=13",
     "email": "noah.rahman@example.com",
     "days_since_contact": 16,
     "status": "almost due",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Olivia Chen",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=23",
     "email": "olivia.chen@example.com",
     "days_since_contact": 3,
     "status": "on-track",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Ethan Brown",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=18",
     "email": "ethan.brown@example.com",
     "days_since_contact": 25,
     "status": "overdue",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Ava Thompson",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=32",
     "email": "ava.t@example.com",
     "days_since_contact": 12,
     "status": "almost due",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Lucas Silva",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=20",
     "email": "lucas.silva@example.com",
     "days_since_contact": 6,
     "status": "on-track",
@@ -122,7 +122,7 @@
   {
     "id": 11,
     "name": "Mia Johnson",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=25",
     "email": "mia.johnson@example.com",
     "days_since_contact": 18,
     "status": "almost due",
@@ -134,7 +134,7 @@
   {
     "id": 12,
     "name": "Daniel Garcia",
-    "picture": "",
+    "picture": "https://i.pravatar.cc/150?img=30",
     "email": "daniel.g@example.com",
     "days_since_contact": 40,
     "status": "overdue",
