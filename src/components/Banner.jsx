@@ -12,7 +12,7 @@ export default function Banner() {
         Reconnect, track, and nurture relationships.
       </p>
 
-      <button className="bg-green-700 text-white px-6 py-2 rounded-lg">
+      <button className="bg-[#244d3f] text-white hover:bg-green-950 px-6 py-2 rounded-lg">
         + Add a Friend
       </button>
 
