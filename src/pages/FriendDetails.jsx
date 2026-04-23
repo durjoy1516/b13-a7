@@ -47,16 +47,16 @@ export default function FriendDetails() {
     <>
       {/* <Navbar /> */}
 
-      <div className="max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6">
+      <div className=" border max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6">
 
         {/* 🔹 LEFT SIDE */}
-        <div className="bg-white p-6 rounded-xl shadow text-center">
+        <div className=" border bg-white p-6 rounded-xl shadow text-center">
 
           <img
-  src={friend.picture}
-  alt={friend.name}
-  className="w-24 h-24 mx-auto rounded-full object-cover mb-3"
-/>
+            src={friend.picture}
+            alt={friend.name}
+            className="w-24 h-24 mx-auto rounded-full object-cover mb-3"
+          />
 
           <h2 className="text-xl font-bold">{friend.name}</h2>
 
@@ -66,7 +66,7 @@ export default function FriendDetails() {
 
           <div className="mt-3">
             {friend.tags.map((tag, i) => (
-              <span key={i} className="text-xs bg-green-100 px-2 py-1 mr-2 rounded">
+              <span key={i} className="text-xs bg-green-100 px-2 py-1 mr-2 rounded-2xl">
                 {tag}
               </span>
             ))}
@@ -77,24 +77,24 @@ export default function FriendDetails() {
 
           {/* Buttons */}
           <div className="mt-6 space-y-2">
-            <button className="w-full border p-2 rounded">⏰ Snooze 2 Weeks</button>
-            <button className="w-full border p-2 rounded">📦 Archive</button>
-            <button className="w-full border p-2 rounded text-red-500">🗑 Delete</button>
+            <button className="w-full border border-[#e9e9e9] p-2 rounded"><i class="fa-regular fa-alarm-clock"></i> Snooze 2 Weeks</button>
+            <button className="w-full border border-[#e9e9e9] p-2 rounded"><i class="fa-regular fa-file-zipper"></i> Archive</button>
+            <button className="w-full border border-[#e9e9e9] p-2 rounded text-red-500"><i class="fa-regular fa-trash-can"></i> Delete</button>
           </div>
         </div>
 
         {/* 🔹 RIGHT SIDE */}
-        <div className="md:col-span-2 space-y-6">
+        <div className="border md:col-span-2 space-y-6">
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 mt-10">
             <Stat title="Days Since Contact" value={friend.days_since_contact} />
             <Stat title="Goal (Days)" value={friend.goal} />
             <Stat title="Next Due" value={friend.next_due_date} />
           </div>
 
           {/* Relationship Goal */}
-          <div className="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+          <div className="bg-white p-4 rounded-xl shadow flex justify-between items-center mt-10">
             <div>
               <p className="font-semibold">Relationship Goal</p>
               <p className="text-gray-500">
@@ -105,18 +105,18 @@ export default function FriendDetails() {
           </div>
 
           {/* Quick Check-in */}
-          <div className="bg-white p-4 rounded-xl shadow">
+          <div className="bg-white p-4 rounded-xl shadow mt-10">
             <h3 className="font-semibold mb-3">Quick Check-in</h3>
 
             <div className="flex gap-4">
-              <button onClick={() => handleAction("Call")} className="flex-1 border p-3 rounded">
-                📞 Call
+              <button onClick={() => handleAction("Call")} className="flex-1 border border-[#e9e9e9] p-3 rounded text-[18px]">
+                <i class="fa-solid fa-phone"></i> Call
               </button>
-              <button onClick={() => handleAction("Text")} className="flex-1 border p-3 rounded">
-                💬 Text
+              <button onClick={() => handleAction("Text")} className="flex-1 border border-[#e9e9e9] p-6 rounded text-[18px]">
+                <i class="fa-solid fa-comments"></i> Text
               </button>
-              <button onClick={() => handleAction("Video")} className="flex-1 border p-3 rounded">
-                🎥 Video
+              <button onClick={() => handleAction("Video")} className="flex-1 border border-[#e9e9e9] p-3 rounded text-[18px]">
+                <i class="fa-solid fa-video"></i> Video
               </button>
             </div>
           </div>
@@ -148,7 +148,7 @@ function Stat({ title, value }) {
 
 // 🔥 Status Color
 function statusColor(status) {
-  if (status === "overdue") return "bg-red-100 text-red-600";
-  if (status === "almost due") return "bg-yellow-100 text-yellow-600";
-  return "bg-green-100 text-green-600";
+  if (status === "overdue") return "bg-[#ef4444] text-white";
+  if (status === "almost due") return "bg-[#efad44] text-white";
+  return "bg-[#244d3f] text-white";
 }

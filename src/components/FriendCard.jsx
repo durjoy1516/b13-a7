@@ -22,7 +22,7 @@ export default function FriendCard({ friend }) {
           {friend.tags.map((tag, i) => (
             <span
               key={i}
-              className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded"
+              className="text-xs bg-[#cbfadb] text-[#244d3f] px-2 py-1 rounded-2xl"
             >
               {tag}
             </span>
@@ -40,7 +40,7 @@ export default function FriendCard({ friend }) {
 }
 
 function getStatusColor(status) {
-  if (status === "overdue") return "bg-red-100 text-red-600";
-  if (status === "almost due") return "bg-yellow-100 text-yellow-600";
-  return "bg-green-100 text-green-600";
+  if (status === "overdue") return "bg-[#ef4444] text-white";
+  if (status === "almost due") return "bg-[#efad44] text-white";
+  return "bg-[#244d3f] text-white";
 }
