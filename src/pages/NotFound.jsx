@@ -21,7 +21,7 @@ export default function NotFound() {
 
           {/* 10-word paragraph */}
           <p className="text-gray-500 mt-4 text-center max-w-md">
-            The page you are looking for does not exist here
+            The page you are looking for does not exist here or moved to another page.
           </p>
 
           {/* Home button */}
