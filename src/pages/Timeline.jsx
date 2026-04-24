@@ -90,8 +90,8 @@ export default function Timeline() {
 
                   {/* Text */}
                   <div>
-                    <p className="font-semibold">
-                      {item.type} with {item.name}
+                    <p className="text-[#64748b]">
+                      <span className="text-[#244d3f] font-bold">{item.type}</span> with {item.name}
                     </p>
                     <p className="text-sm text-gray-500">
                       {item.date}
