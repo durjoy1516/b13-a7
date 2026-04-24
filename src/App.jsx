@@ -26,21 +26,21 @@ function App() {
       </Routes>
       <Footer/>
 
-       {/* 🔥 Toastify */}
-    <ToastContainer
-  position="top-center"
-  autoClose={1500}
-  hideProgressBar
-  closeOnClick
-  pauseOnHover
-  draggable
-  theme="light"
-  closeButton={false}
-  toastClassName={() =>
-    "bg-white text-gray-800 text-sm px-3 py-2 rounded-lg shadow-md flex items-center"
-  }
-  bodyClassName={() => "flex items-center gap-2"}
-/>
+       {/* Toastify */}
+        <ToastContainer
+            position="top-center"
+            autoClose={1500}
+            hideProgressBar
+            closeOnClick
+            pauseOnHover
+            draggable
+            theme="light"
+            closeButton={false}
+            toastClassName={() =>
+            "bg-white text-gray-800 text-sm px-3 p    y-2 rounded-lg shadow-md flex items-center"
+            }
+            bodyClassName={() => "flex items-center gap-2"}
+        />
     </BrowserRouter>
   );
 }

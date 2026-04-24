@@ -21,9 +21,10 @@ export default function Home() {
   if (loading) {
     return (
      <div className="flex flex-col items-center gap-3 py-10">
-  <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
-  <p className="text-gray-500">Loading data...</p>
-</div>
+        <div className="w-10 h-10 border-4 border-[#244d3f] border-t-transparent rounded-full animate-spin">
+        </div>
+        <p className="text-gray-500">Loading data...</p>
+      </div>
     );
   }
 

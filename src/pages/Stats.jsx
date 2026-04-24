@@ -23,6 +23,7 @@ export default function Stats() {
     { name: "Video", value: video },
   ];
 
+  
   return (
     <>
       {/* <Navbar /> */}

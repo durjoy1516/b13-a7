@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
+    
     <div>
-
-        <div className="mx-40 p-20 border border-amber-300 flex flex-col items-center justify-center bg-gray-50">
+        <div className="mx-40 mt-10 p-20 border border-gray-300 rounded-4xl flex flex-col items-center justify-center bg-gray-50">
 
           {/* Alert Symbol */}
-          {/* <span className=" text-green-950"><i className="fa-solid fa-skull-crossbones"></i></span> */}
+          <span className=" text-green-950"><i class="fa-solid fa-face-sad-tear"></i></span>
 
           {/* Big 404 */}
           <h1 className="text-[#244d3f] text-[140px] font-extrabold leading-none">
@@ -26,7 +26,7 @@ export default function NotFound() {
 
           {/* Home button */}
           <Link to="/">
-            <button className="mt-6 px-6 py-3 bg-[#244d3f] text-white rounded-xl hover:bg-green-900 transition">
+            <button className=" mt-6 px-6 py-3 bg-[#244d3f] text-white rounded-xl hover:bg-green-900 transition">
               Go to Home  <i class="fa-solid fa-person-walking-arrow-right"></i>
             </button>
           </Link>
