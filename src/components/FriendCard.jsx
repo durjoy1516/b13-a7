@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function FriendCard({ friend }) {
   return (
     <Link to={`/friend/${friend.id}`}>
-      <div className="p-4 bg-white shadow rounded-xl text-center">
+      <div className="p-4 bg-white shadow rounded-xl text-center hover:">
 
         {/* Image */}
         <img src={friend.picture} alt={friend.name}className="w-20 h-20 mx-auto rounded-full object-cover mb-3"/>
