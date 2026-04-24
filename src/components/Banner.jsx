@@ -19,7 +19,7 @@ export default function Banner() {
       {/* Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
         <div className="p-4 bg-white shadow rounded-xl">
-          <h2 className="text-2xl font-bold">10</h2>
+          <h2 className="text-2xl font-bold">12</h2>
           <p>Total Friends</p>
         </div>
 

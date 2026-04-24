@@ -31,22 +31,22 @@ export default function Timeline() {
         </h1>
 
        {/* 🔹 Classic Dropdown Filter */}
-        <div className="relative mb-6 w-40">
+        <div className="relative mb-6 w-60">
           
           {/* Button */}
           <button
             onClick={() => setDropdown(!dropdown)}
-            className="w-full px-4 py-2 border rounded bg-white shadow-sm flex justify-between items-center"
+            className="w-full px-4 py-1 border rounded bg-white shadow-sm flex justify-between items-center text-[#64748b]"
           >
             <span>{filter}</span>
             <span className={`text-xs transition ${dropdown ? "rotate-180" : ""}`}>
-              ▼
+            <i class="fa-solid fa-chevron-down"></i>
             </span>
           </button>
           
           {/* Dropdown Menu */}
           {dropdown && (
-            <div className="absolute left-0 mt-1 w-full bg-white border rounded shadow-md z-10">
+            <div className="absolute left-10 w-50 bg-white border rounded-md shadow-md z-10 border-gray-300">
             
               {["All", "Call", "Text", "Video"].map((type) => (
                 <div
@@ -56,7 +56,7 @@ export default function Timeline() {
                     setDropdown(false);
                   }}
                   className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100
-                    ${filter === type ? "bg-gray-100 font-semibold" : ""}
+                    ${filter === type ? "bg-gray-100 font-bold" : ""}
                   `}
                 >
                   {type}

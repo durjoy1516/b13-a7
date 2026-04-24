@@ -7,6 +7,8 @@ import Timeline from "./pages/Timeline";
 import Stats from "./pages/Stats";
 import FriendDetails from "./pages/FriendDetails";
 import NotFound from "./pages/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -23,6 +25,22 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer/>
+
+       {/* 🔥 Toastify */}
+    <ToastContainer
+  position="top-center"
+  autoClose={1500}
+  hideProgressBar
+  closeOnClick
+  pauseOnHover
+  draggable
+  theme="light"
+  closeButton={false}
+  toastClassName={() =>
+    "bg-white text-gray-800 text-sm px-3 py-2 rounded-lg shadow-md flex items-center"
+  }
+  bodyClassName={() => "flex items-center gap-2"}
+/>
     </BrowserRouter>
   );
 }

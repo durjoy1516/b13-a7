@@ -1,14 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import Navbar from "../components/Navbar";
-// import Footer from "../components/Footer";
+import { toast } from "react-toastify";
 
 export default function FriendDetails() {
   const { id } = useParams();
   const [friend, setFriend] = useState(null);
-
-  const [showToast, setShowToast] = useState(false);
-  const [toastMsg, setToastMsg] = useState("");
 
   // 🔥 Fetch friend
   useEffect(() => {
@@ -37,20 +33,16 @@ export default function FriendDetails() {
 
     localStorage.setItem("timeline", JSON.stringify(updated));
 
-    setToastMsg(`${type} with ${friend.name}`);
-    setShowToast(true);
-
-    setTimeout(() => setShowToast(false), 2000);
+    // 🔥 React Toastify
+    toast.success(`${type} with ${friend.name}`);
   };
 
   return (
     <>
-      {/* <Navbar /> */}
-
-      <div className=" border max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto p-6 grid md:grid-cols-3 gap-6">
 
         {/* 🔹 LEFT SIDE */}
-        <div className=" border bg-white p-6 rounded-xl shadow text-center">
+        <div className="bg-white p-6 rounded-xl shadow text-center">
 
           <img
             src={friend.picture}
@@ -66,7 +58,10 @@ export default function FriendDetails() {
 
           <div className="mt-3">
             {friend.tags.map((tag, i) => (
-              <span key={i} className="text-xs bg-green-100 px-2 py-1 mr-2 rounded-2xl">
+              <span
+                key={i}
+                className="text-xs bg-[#cbfadb] text-[#244d3f] px-2 py-1 mr-2 rounded-2xl"
+              >
                 {tag}
               </span>
             ))}
@@ -77,72 +72,103 @@ export default function FriendDetails() {
 
           {/* Buttons */}
           <div className="mt-6 space-y-2">
-            <button className="w-full border border-[#e9e9e9] p-2 rounded"><i class="fa-regular fa-alarm-clock"></i> Snooze 2 Weeks</button>
-            <button className="w-full border border-[#e9e9e9] p-2 rounded"><i class="fa-regular fa-file-zipper"></i> Archive</button>
-            <button className="w-full border border-[#e9e9e9] p-2 rounded text-red-500"><i class="fa-regular fa-trash-can"></i> Delete</button>
+            <button className="w-full border border-[#e9e9e9] p-2 rounded hover:bg-gray-300 cursor-pointer">
+              <i className="fa-regular fa-alarm-clock"></i> Snooze 2 Weeks
+            </button>
+
+            <button className="w-full border border-[#e9e9e9] p-2 rounded hover:bg-gray-300 cursor-pointer">
+              <i className="fa-regular fa-file-zipper"></i> Archive
+            </button>
+
+            <button className="w-full border border-[#e9e9e9] p-2 rounded text-red-500 hover:bg-gray-300 cursor-pointer">
+              <i className="fa-regular fa-trash-can"></i> Delete
+            </button>
           </div>
         </div>
 
         {/* 🔹 RIGHT SIDE */}
-        <div className="border md:col-span-2 space-y-6">
+        <div className="md:col-span-2 space-y-6">
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-10">
-            <Stat title="Days Since Contact" value={friend.days_since_contact} />
-            <Stat title="Goal (Days)" value={friend.goal} />
-            <Stat title="Next Due" value={friend.next_due_date} />
+          <div className="grid grid-cols-3 gap-4 mt-10 text-center">
+
+            <div className="p-4 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center">
+              <p className="text-2xl font-bold text-[#244d3f]">
+                {friend.days_since_contact}
+              </p>
+              <h4 className="text-sm text-gray-500 mt-1">Days Since Contact</h4>
+            </div>
+
+            <div className="p-4 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center">
+              <p className="text-2xl font-bold text-[#244d3f]">
+                {friend.goal}
+              </p>
+              <h4 className="text-sm text-gray-500 mt-1">Goal (Days)</h4>
+            </div>
+
+            <div className="p-4 bg-white rounded-xl shadow-sm flex flex-col items-center justify-center">
+              <p className="text-2xl font-bold text-[#244d3f]">
+                {friend.next_due_date}
+              </p>
+              <h4 className="text-sm text-gray-500 mt-1">Next Due</h4>
+            </div>
+
           </div>
 
           {/* Relationship Goal */}
           <div className="bg-white p-4 rounded-xl shadow flex justify-between items-center mt-10">
             <div>
-              <p className="font-semibold">Relationship Goal</p>
+              <p className="font-bold text-[#244d3f] mb-2">
+                Relationship Goal
+              </p>
               <p className="text-gray-500">
-                Connect every {friend.goal} days
+                Connect every{" "}
+                <span className="font-bold text-black">
+                  {friend.goal} days
+                </span>
               </p>
             </div>
-            <button className="text-sm text-blue-500">Edit</button>
+
+            <button className="border rounded border-gray-200 px-2 hover:shadow-md transition duration-200 text-sm text-blue-500">
+              Edit
+            </button>
           </div>
 
           {/* Quick Check-in */}
           <div className="bg-white p-4 rounded-xl shadow mt-10">
-            <h3 className="font-semibold mb-3">Quick Check-in</h3>
+            <h3 className="font-bold mb-3 text-[#244d3f]">
+              Quick Check-in
+            </h3>
 
             <div className="flex gap-4">
-              <button onClick={() => handleAction("Call")} className="flex-1 border border-[#e9e9e9] p-3 rounded text-[18px]">
-                <i class="fa-solid fa-phone"></i> Call
+
+              <button
+                onClick={() => handleAction("Call")}
+                className="flex-1 border border-[#e9e9e9] hover:text-red-500 p-3 rounded text-[18px] hover:shadow-lg hover:-translate-y-1 transition duration-200"
+              >
+                <i className="fa-solid fa-phone"></i> Call
               </button>
-              <button onClick={() => handleAction("Text")} className="flex-1 border border-[#e9e9e9] p-6 rounded text-[18px]">
-                <i class="fa-solid fa-comments"></i> Text
+
+              <button
+                onClick={() => handleAction("Text")}
+                className="flex-1 border border-[#e9e9e9] p-6 rounded text-[18px] hover:text-blue-500 hover:shadow-lg hover:-translate-y-1 transition duration-200"
+              >
+                <i className="fa-solid fa-comments"></i> Text
               </button>
-              <button onClick={() => handleAction("Video")} className="flex-1 border border-[#e9e9e9] p-3 rounded text-[18px]">
-                <i class="fa-solid fa-video"></i> Video
+
+              <button
+                onClick={() => handleAction("Video")}
+                className="flex-1 border border-[#e9e9e9] p-3 rounded text-[18px] hover:text-yellow-700 hover:shadow-lg hover:-translate-y-1 transition duration-200"
+              >
+                <i className="fa-solid fa-video"></i> Video
               </button>
+
             </div>
           </div>
 
         </div>
       </div>
-
-      {/* 🔥 Toast */}
-      {showToast && (
-        <div className="fixed top-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow">
-          {toastMsg}
-        </div>
-      )}
-
-      {/* <Footer /> */}
     </>
-  );
-}
-
-// 🔥 Stat Card
-function Stat({ title, value }) {
-  return (
-    <div className="bg-white p-4 rounded-xl shadow text-center">
-      <p className="text-lg font-bold">{value}</p>
-      <p className="text-sm text-gray-500">{title}</p>
-    </div>
   );
 }
 
